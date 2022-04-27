@@ -1,0 +1,17 @@
+.clock-container {
+    text-align: center;
+    margin: 10px;
+    height: 30vh;
+    width: 30vw;
+    padding: 10px;
+    background-color: aquamarine;
+    border-radius: 15px;
+    border-color: rgb(50, 85, 116);
+    border-width: 30px;
+}
+
+.text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}

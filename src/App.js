@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+ import React, { Component } from 'react'
+ import Clock from './components/clock'
+ import "./App.css"
+ export default class App extends Component {
+   state={buttonClicked:false}
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+   toggleButton=()=>{
+     this.setState(prevState=>({
+       buttonClicked:! prevState.buttonClicked
+     }))
+   }
 
-export default App;
+
+   render() {
+     const {buttonClicked}=this.state
+     return (
+       <div className='bg-container'>
+          <button type="submit"  onClick={this.toggleButton} className="button">
+            {buttonClicked ? " Hide clock":"Show clock"}
+          </button>
+           {buttonClicked && <Clock/>}
+       </div>
+     )
+   }
+ }
+ 
